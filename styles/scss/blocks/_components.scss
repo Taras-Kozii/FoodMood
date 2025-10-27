@@ -2,50 +2,36 @@
 
 //=================================BUTTON=============================
 .button {
-  width: min(100%, 480px);
+  min-width: fit-content;
   position: relative;
   left: 0;
   right: 0;
-  padding-block: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #2b9ee7;
+  padding-block: 0.875rem;
+  padding-inline: 2.875rem;
+  color: $bg-color-main;
 
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 150%;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
 
-  border-radius: 20px;
-  border: 2px solid #6cafd9;
-  background: #c9e4ea;
+  border: 2px solid $bg-color-yellow;
+  background: $bg-color-yellow;
   transition: $transition-duraction;
   cursor: pointer;
   z-index: 1;
   overflow: hidden;
-}
-
-// ==============================LOGO
-.logo {
-  display: flex;
-  align-items: center;
-
-  &__img {
-    display: block;
-    aspect-ratio: 1 / 1;
-    @include adaptive-property(width, 42, 0, 60);
-    @include ibg;
-  }
+  @include flex-center;
 }
 
 // ===================================SECTION-HEADER=====================
 .section-header {
-  @include flex;
   row-gap: 0.625rem;
+
   .section-title {
     font-weight: 600;
     line-height: 100%;
-    color: $bg-color;
+    color: $text-color-main;
     @include adaptive-property(font-size, 1.625, 3.4375, rem);
   }
   .section-subtitle {
@@ -54,4 +40,5 @@
     line-height: 100%;
     color: $bg-color-yellow;
   }
+  @include flex;
 }

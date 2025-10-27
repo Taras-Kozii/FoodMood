@@ -1,0 +1,32 @@
+@use "../utils/_index.scss" as *;
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    @include ibg;
+  }
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.625rem;
+  }
+  &__subtitle strong {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 100%;
+    color: $bg-color-main;
+    @include adaptive-property(font-size, 1.25, 0, 1.625, rem);
+  }
+  &__title {
+    font-weight: 600;
+    line-height: 100%;
+    color: $bg-color-main;
+    @include adaptive-property(font-size, 2, 0, 4, rem);
+  }
+}
