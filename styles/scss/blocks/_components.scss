@@ -42,3 +42,11 @@
   }
   @include flex;
 }
+
+.logo {
+    transition: letter-spacing $transition-duraction ease-in-out;
+
+    @include hover {
+      letter-spacing: 5px;
+    }
+}

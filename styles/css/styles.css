@@ -293,6 +293,21 @@ h6 {
   color: #ffcc00;
 }
 
+.logo {
+  -webkit-transition: letter-spacing 0.3s ease-in-out;
+  transition: letter-spacing 0.3s ease-in-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .logo:hover, .logo:focus-within {
+    letter-spacing: 5px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .logo:active, .logo:focus, .logo:focus-within {
+    letter-spacing: 5px;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -582,23 +597,6 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0px;
   color: #ffcc00;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  -webkit-transition: letter-spacing 0.3s ease-in-out;
-  transition: letter-spacing 0.3s ease-in-out;
-}
-@media (hover: hover) and (pointer: fine) {
-  .footer__logo:hover, .footer__logo:focus-within {
-    letter-spacing: 5px;
-  }
-}
-@media (hover: none) and (pointer: coarse) {
-  .footer__logo:active, .footer__logo:focus, .footer__logo:focus-within {
-    letter-spacing: 5px;
-  }
 }
 
 .footer-bottom {
@@ -641,6 +639,13 @@ h6 {
      -moz-column-gap: 1rem;
           column-gap: 1rem;
   row-gap: 2.5rem;
+}
+@media (min-width: 767.98px) {
+  .lists-footer {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 .lists-footer__block {
   display: -webkit-box;

@@ -36,15 +36,6 @@
     text-transform: uppercase;
     letter-spacing: 0px;
     color: $bg-color-yellow;
-
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: letter-spacing $transition-duraction ease-in-out;
-
-    @include hover {
-      letter-spacing: 5px;
-    }
   }
 }
 
@@ -72,6 +63,9 @@
   justify-content: space-evenly;
   column-gap: 1rem;
   row-gap: 2.5rem;
+  @include on-mobile-l {
+    justify-content: space-between;
+  }
 
   &__block {
     display: flex;
