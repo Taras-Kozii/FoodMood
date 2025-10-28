@@ -580,7 +580,25 @@ h6 {
   font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0px;
   color: #ffcc00;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: letter-spacing 0.3s ease-in-out;
+  transition: letter-spacing 0.3s ease-in-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .footer__logo:hover, .footer__logo:focus-within {
+    letter-spacing: 5px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .footer__logo:active, .footer__logo:focus, .footer__logo:focus-within {
+    letter-spacing: 5px;
+  }
 }
 
 .footer-bottom {

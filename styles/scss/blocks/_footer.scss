@@ -34,7 +34,17 @@
     font-size: 24px;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0px;
     color: $bg-color-yellow;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: letter-spacing $transition-duraction ease-in-out;
+
+    @include hover {
+      letter-spacing: 5px;
+    }
   }
 }
 
