@@ -1,0 +1,63 @@
+@use "../utils/_index" as *;
+
+.app {
+  background-color: $bg-color-yellow;
+  &__content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    @include adaptive-property(padding-top, 32, 0, 65);
+    @include adaptive-property(padding-bottom, 72, 0, 135);
+    @include on-mobile-s {
+      flex-wrap: nowrap;
+    }
+  }
+  &__text-content {
+    flex-basis: 100%;
+    @include on-mobile-l {
+      flex-basis: 50%;
+    }
+  }
+  &__title {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 100%;
+    color: $bg-color-main;
+    @include adaptive-property(font-size, 1.8, 0, 3.4375, rem);
+    @include adaptive-property(margin-bottom, 20, 0, 32);
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.625rem;
+
+    p {
+      font-weight: 600;
+      line-height: 100%;
+      color: $bg-color-main;
+      @include adaptive-property(font-size, 1.25, 0, 1.625, rem);
+    }
+    @include adaptive-property(margin-bottom, 40, 0, 72);
+  }
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  &__img {
+    flex-basis: 100%;
+    aspect-ratio: 585 / 534;
+    @include ibg;
+    @include on-mobile-l {
+      flex-basis: 50%;
+    }
+  }
+  &__button {
+    border-radius: 10px;
+    width: 176px;
+    height: 55px;
+    @include ibg;
+  }
+}

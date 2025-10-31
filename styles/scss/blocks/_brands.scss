@@ -1,0 +1,17 @@
+@use "../utils/_index" as *;
+
+.brands {
+  &__content {
+    @include adaptive-property(padding-block, 40, 0, 75);
+  }
+}
+.items-brands {
+  @include grid-cards(fit, 140px, 277px, 30px);
+  justify-content: center;
+
+  &__img {
+    display: inline-block;
+    aspect-ratio: 277 / 200;
+    @include ibg;
+  }
+}
