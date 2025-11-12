@@ -259,31 +259,27 @@ h6 {
 }
 
 .section-header {
-  row-gap: 0.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0.625rem;
 }
 .section-header .section-title {
   font-weight: 600;
   line-height: 100%;
   color: #231900;
-  font-size: calc(1.625px + (1.8125) * (100vw - 320px) / (447.98));
+  font-size: 3.4375rem;
 }
-@media (min-width: 767.98px) {
+@media (max-width: 1440px) {
   .section-header .section-title {
-    font-size: calc(3.4375px + (rem-3.4375) * (100vw - 767.98px) / (672.02));
-  }
-}
-@media (min-width: 1440px) {
-  .section-header .section-title {
-    font-size: rempx;
+    font-size: calc(1.625rem + (1.8125) * (100vw - 20rem) / (70));
   }
 }
 .section-header .section-subtitle {
@@ -516,6 +512,44 @@ h6 {
   .hero__digit {
     font-size: calc(1.6rem + (2.4) * (100vw - 20rem) / (70));
   }
+}
+
+.categories__content {
+  padding-top: 27px;
+  padding-bottom: 40px;
+}
+.categories__items {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: grid;
+  min-width: 0;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 277px));
+}
+.categories__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.categories__img {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.categories__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .app {

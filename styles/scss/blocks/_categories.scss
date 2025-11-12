@@ -1,0 +1,21 @@
+@use "../utils/_index" as *;
+
+.categories {
+  &__content {
+    padding-top: 27px;
+    padding-bottom: 40px;
+  }
+  &__items {
+    justify-content: center;
+    @include grid-cards(fit, 140px, 277px, 30px);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    aspect-ratio: 1 / 1;
+    @include ibg(contain);
+  }
+}

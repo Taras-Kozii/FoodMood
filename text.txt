@@ -1,4 +1,7 @@
-
+              <div class="section-header">
+                <h4 class="section-subtitle">TOP FOODS</h4>
+                <h3 class="section-title">Our Categories</h3>
+              </div>
 
 
 
