@@ -1,0 +1,41 @@
+@use "../utils/_index" as *;
+
+.delivery {
+  background-color: $bg-color-yellow;
+  @include adaptive-property(padding-top, 30, 0, 43);
+  @include adaptive-property(padding-bottom, 30, 0, 59);
+  &__items {
+    justify-content: center;
+    @include grid-cards(fill, 200px, 380px, 30px);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__img {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: $bg-color-main;
+    @include flex-center;
+    @include adaptive-property(width, 70, 0, 115);
+    @include adaptive-property(margin-bottom, 22, 0, 42);
+  }
+  &__subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 150%;
+    color: #fff;
+    @include adaptive-property(margin-bottom, 18, 0, 22);
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.625rem;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 100%;
+    color: #fff;
+  }
+}

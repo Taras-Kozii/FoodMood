@@ -7,15 +7,34 @@
   }
   &__items {
     justify-content: center;
-    @include grid-cards(fit, 140px, 277px, 30px);
+    @include grid-cards(fill, 140px, 180px, 15px);
+    @include on-mobile-l {
+      @include grid-cards(fill, 140px, 277px, 30px);
+    }
   }
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
   &__img {
+    width: 100%;
     aspect-ratio: 1 / 1;
+    margin-bottom: 10px;
     @include ibg(contain);
+  }
+  &__food {
+    font-weight: 700;
+    line-height: 100%;
+    color: $text-color-main;
+    @include adaptive-property(margin-bottom, 1.125, 0, 1.625, rem);
+    @include adaptive-property(font-size, 1.2, 0, 1.5, rem);
+  }
+  &__subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 100%;
+    @include adaptive-property(font-size, 1, 0, 1.25, rem);
   }
 }
