@@ -1,6 +1,22 @@
 @use "../utils/_index" as *;
 
 .team {
+  &__header {
+    @include adaptive-property(margin-bottom, 40, 0, 82);
+  }
+  &__header .section-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include adaptive-property(row-gap, 20, 0, 40);
+  }
+  &__header .section-title::after {
+    content: "";
+    width: 36.607143%; /* 205/560 */
+    height: 5px;
+    background-color: $bg-color-yellow;
+  }
   &__items {
     display: grid;
     min-width: 0;
