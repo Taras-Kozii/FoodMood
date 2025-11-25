@@ -1,0 +1,147 @@
+@use "../utils/_index" as *;
+
+.menu {
+  @media (max-width: 1024.9px) {
+    &__body {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100svh;
+      width: 100%;
+      padding: 100px 30px 30px;
+      background: linear-gradient(0deg, #f0eeee 0%, #f5f5f5 40%, #5f5f6b 100%);
+      transition: $transition-duraction;
+      overflow: auto;
+
+      &::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 118px;
+        left: -100%;
+        top: 0;
+        background: rgba(95, 95, 107, 0.1);
+        backdrop-filter: blur(5px);
+        transition: $transition-duraction;
+        z-index: 2;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    &__list {
+      padding-block: 35px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 80px;
+      row-gap: 1.5rem;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 150%; /* 21px/14 */
+    span {
+      color: $bg-color-main;
+    }
+  }
+}
+
+.menu__body.open {
+  left: 0%;
+
+  &::before {
+    left: 0;
+  }
+}
+
+//=======================================BURGER 1 SPAN ==========================
+$menu-size: 40px;
+$line-height: 3px;
+$gap: $line-height * 5;
+$bg-color: $bg-color-yellow;
+$radius: 0;
+
+%menu-dash {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: $bg-color;
+  width: $menu-size;
+  height: $line-height;
+  border-radius: $radius;
+}
+
+.burger {
+  @media (max-width: 1024px) {
+    width: $menu-size;
+    height: $menu-size;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  span {
+    @extend %menu-dash;
+    margin-top: $line-height / -2;
+  }
+
+  &:before {
+    content: "";
+    @extend %menu-dash;
+    margin-top: -$gap + ($line-height / -2);
+  }
+
+  &:after {
+    content: "";
+    @extend %menu-dash;
+    margin-top: $gap + ($line-height / -2);
+  }
+
+  display: none;
+}
+
+.midle-hidden {
+
+  &:before,
+  &:after,
+  span {
+    transition: 0.25s ease-in-out;
+  }
+
+  &.active {
+    &:before {
+      transform: rotate(135deg);
+      margin-top: $line-height / -2;
+    }
+
+    &:after {
+      transform: rotate(-135deg);
+      margin-top: $line-height / -2;
+    }
+
+    span {
+      opacity: 0;
+      transform: translateX(150%);
+    }
+  }
+}

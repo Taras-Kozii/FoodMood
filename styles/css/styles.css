@@ -316,6 +316,9 @@ h6 {
 .header__content {
   width: 100%;
   padding: 10px 0;
+  -webkit-column-gap: 54px;
+     -moz-column-gap: 54px;
+          column-gap: 54px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,6 +344,9 @@ h6 {
           align-items: center;
 }
 .header__logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
   z-index: 5;
   position: relative;
   left: 0;
@@ -348,8 +354,11 @@ h6 {
 }
 
 .header.scrolling {
-  background: rgba(79, 79, 84, 0.2);
+  background: rgba(204, 88, 136, 0.2);
   backdrop-filter: blur(18px);
+}
+.header.scrolling span, .header.scrolling .header__logo {
+  text-shadow: 1px 1px 3px #000;
 }
 
 .header.hidden {
@@ -357,6 +366,155 @@ h6 {
   -webkit-transform: translateY(-30px);
       -ms-transform: translateY(-30px);
           transform: translateY(-30px);
+}
+
+@media (max-width: 1024.9px) {
+  .menu__body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100svh;
+    width: 100%;
+    padding: 100px 30px 30px;
+    background: -webkit-gradient(linear, left bottom, left top, from(#f0eeee), color-stop(40%, #f5f5f5), to(#5f5f6b));
+    background: linear-gradient(0deg, #f0eeee 0%, #f5f5f5 40%, #5f5f6b 100%);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    overflow: auto;
+  }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 118px;
+    left: -100%;
+    top: 0;
+    background: rgba(95, 95, 107, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 2;
+  }
+  .menu__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 2rem;
+  }
+}
+@media (min-width: 1025px) {
+  .menu__list {
+    padding-block: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-column-gap: 80px;
+       -moz-column-gap: 80px;
+            column-gap: 80px;
+    row-gap: 1.5rem;
+  }
+}
+.menu__link {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 150%; /* 21px/14 */
+}
+.menu__link span {
+  color: #fff;
+}
+
+.menu__body.open {
+  left: 0%;
+}
+.menu__body.open::before {
+  left: 0;
+}
+
+.burger:after, .burger:before, .burger span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: #ffcc00;
+  width: 40px;
+  height: 3px;
+  border-radius: 0;
+}
+
+.burger {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .burger {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    cursor: pointer;
+  }
+}
+.burger span {
+  margin-top: -1.5px;
+}
+.burger:before {
+  content: "";
+  margin-top: -16.5px;
+}
+.burger:after {
+  content: "";
+  margin-top: 13.5px;
+}
+
+.midle-hidden:before, .midle-hidden:after,
+.midle-hidden span {
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.midle-hidden.active:before {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  margin-top: -1.5px;
+}
+.midle-hidden.active:after {
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  margin-top: -1.5px;
+}
+.midle-hidden.active span {
+  opacity: 0;
+  -webkit-transform: translateX(150%);
+      -ms-transform: translateX(150%);
+          transform: translateX(150%);
 }
 
 .hero {
