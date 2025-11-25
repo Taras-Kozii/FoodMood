@@ -335,7 +335,6 @@ h6 {
 }
 .header__content {
   width: 100%;
-  padding: 10px 0;
   -webkit-column-gap: 54px;
      -moz-column-gap: 54px;
           column-gap: 54px;
@@ -348,11 +347,20 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-block: 35px;
+}
+@media (max-width: 1440px) {
+  .header__content {
+    padding-block: calc(16px + (19) * (100vw - 320px) / (1120));
+  }
 }
 .header__menu {
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -363,21 +371,39 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (min-width: 991.98px) {
+  .header__menu {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
 .header__logo {
   font-size: 1.125rem;
   font-weight: 700;
   color: #fff;
   z-index: 5;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   position: relative;
   left: 0;
   top: 0;
 }
 .header__button {
   display: none;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 @media (min-width: 767.98px) {
   .header__button {
-    display: inline-block;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 
@@ -385,8 +411,17 @@ h6 {
   background: rgba(204, 88, 136, 0.2);
   backdrop-filter: blur(18px);
 }
-.header.scrolling span, .header.scrolling .header__logo {
+.header.scrolling .menu__link span,
+.header.scrolling .header__logo {
   text-shadow: 1px 1px 3px #000;
+  color: #fff;
+}
+.header.scrolling .menu__link span:not(:hover) {
+  text-shadow: 1px 1px 3px #000;
+  color: #fff;
+}
+.header.scrolling .header__content {
+  padding: 10px 0;
 }
 
 .header.hidden {
@@ -404,8 +439,8 @@ h6 {
     height: 100svh;
     width: 100%;
     padding: 100px 30px 30px;
-    background: -webkit-gradient(linear, left bottom, left top, from(#f0eeee), color-stop(40%, #f5f5f5), to(#5f5f6b));
-    background: linear-gradient(0deg, #f0eeee 0%, #f5f5f5 40%, #5f5f6b 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#facc15), to(#22c55e));
+    background: linear-gradient(to right, #facc15, #22c55e);
     -webkit-transition: 0.3s;
     transition: 0.3s;
     overflow: auto;
@@ -414,14 +449,16 @@ h6 {
     content: "";
     position: fixed;
     width: 100%;
-    min-height: 50px;
+    height: 80px;
     left: -100%;
     top: 0;
-    background: rgba(95, 95, 107, 0.1);
+    background: -webkit-gradient(linear, left top, right top, from(#facc15), to(#22c55e));
+    background: linear-gradient(to right, #facc15, #22c55e);
     backdrop-filter: blur(5px);
     -webkit-transition: 0.3s;
     transition: 0.3s;
     z-index: 2;
+    opacity: 0.8;
   }
   .menu__list {
     display: -webkit-box;
@@ -437,12 +474,12 @@ h6 {
     row-gap: 2rem;
   }
   .menu__link span {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    color: #fff;
   }
 }
 @media (min-width: 1025px) {
   .menu__list {
-    padding-block: 35px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -455,20 +492,36 @@ h6 {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    row-gap: 44px;
     -webkit-column-gap: 80px;
        -moz-column-gap: 80px;
             column-gap: 80px;
-    row-gap: 1.5rem;
   }
 }
-.menu__link span {
-  display: inline-block;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 150%; /* 21px/14 */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .menu__list {
+    row-gap: calc(22px + (22) * (100vw - 320px) / (1120));
+  }
 }
-.menu__link span span {
-  color: #fff;
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .menu__list {
+    -webkit-column-gap: calc(40px + (40) * (100vw - 320px) / (1120));
+       -moz-column-gap: calc(40px + (40) * (100vw - 320px) / (1120));
+            column-gap: calc(40px + (40) * (100vw - 320px) / (1120));
+  }
+}
+@media (min-width: 1025px) {
+  .menu__link span {
+    font-size: 0.875rem;
+    color: #fff;
+  }
+}
+@media (min-width: 1025px) {
+  .menu {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 .menu__body.open {

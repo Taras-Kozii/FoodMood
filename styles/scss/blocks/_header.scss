@@ -10,14 +10,18 @@
 
   &__content {
     width: 100%;
-    padding: 10px 0;
     column-gap: 54px;
     @include flex(space-between, center);
+    @include adaptive-property(padding-block, 16, 0, 35);
   }
 
   &__menu {
     column-gap: 10px;
+    order: 3;
     @include flex(space-between, center);
+    @include on-tablet {
+      order: 3;
+    }
   }
 
   &__logo {
@@ -25,12 +29,15 @@
     font-weight: 700;
     color: $bg-color-main;
     z-index: 5;
+    order: 1;
     @include position-r;
   }
   &__button {
     display: none;
+    order: 2;
     @include on-mobile-l {
-      display: inline-block;
+      display: inline-flex;
+      order: 2;
     }
   }
 }
@@ -39,8 +46,17 @@
   background: rgba(204, 88, 136, 0.2);
   backdrop-filter: blur(18px);
 
-  span, .header__logo {
+  .menu__link span,
+  .header__logo {
     text-shadow: 1px 1px 3px #000;
+    color: #fff;
+  }
+  .menu__link span:not(:hover) {
+    text-shadow: 1px 1px 3px #000;
+    color: #fff;
+  }
+  .header__content {
+    padding: 10px 0;
   }
 }
 
