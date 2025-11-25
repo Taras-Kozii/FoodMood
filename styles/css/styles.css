@@ -290,17 +290,37 @@ h6 {
 }
 
 .logo {
-  -webkit-transition: letter-spacing 0.3s ease-in-out;
-  transition: letter-spacing 0.3s ease-in-out;
+  padding: 1px;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  text-shadow: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 @media (hover: hover) and (pointer: fine) {
   .logo:hover, .logo:focus-within {
-    letter-spacing: 5px;
+    -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+            transform: translateY(-3px);
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 10px 5px rgba(0, 0, 0, 0.3);
   }
 }
 @media (hover: none) and (pointer: coarse) {
   .logo:active, .logo:focus, .logo:focus-within {
-    letter-spacing: 5px;
+    -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+            transform: translateY(-3px);
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 10px 5px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -352,6 +372,14 @@ h6 {
   left: 0;
   top: 0;
 }
+.header__button {
+  display: none;
+}
+@media (min-width: 767.98px) {
+  .header__button {
+    display: inline-block;
+  }
+}
 
 .header.scrolling {
   background: rgba(204, 88, 136, 0.2);
@@ -386,7 +414,7 @@ h6 {
     content: "";
     position: fixed;
     width: 100%;
-    height: 118px;
+    min-height: 50px;
     left: -100%;
     top: 0;
     background: rgba(95, 95, 107, 0.1);
@@ -407,6 +435,9 @@ h6 {
         -ms-flex-align: center;
             align-items: center;
     row-gap: 2rem;
+  }
+  .menu__link span {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 1025px) {
@@ -430,13 +461,13 @@ h6 {
     row-gap: 1.5rem;
   }
 }
-.menu__link {
+.menu__link span {
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 150%; /* 21px/14 */
 }
-.menu__link span {
+.menu__link span span {
   color: #fff;
 }
 
