@@ -12,7 +12,7 @@
 
   font-size: 0.875rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 110%;
   text-transform: uppercase;
 
   border: 2px solid $bg-color-yellow;
@@ -54,6 +54,8 @@
   @include hover {
     transform: translateY(-3px);
     transform-origin: 50% 50%;
-    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 10px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
+      0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc,
+      0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 10px 5px rgba(0, 0, 0, 0.3);
   }
 }

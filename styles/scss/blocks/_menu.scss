@@ -1,6 +1,13 @@
 @use "../utils/_index" as *;
 
 .menu {
+  &__link span {
+    font-weight: 700;
+    color: #fff;
+    line-height: 100%; /* 21px/14 */
+    text-transform: uppercase;
+    text-align: center;
+  }
   @media (max-width: 1024.9px) {
     &__body {
       position: fixed;
@@ -34,9 +41,8 @@
       align-items: center;
       row-gap: 2rem;
     }
-    &__link span {
+    &__link {
       font-size: 1.4rem;
-      color: #fff;
     }
   }
 
@@ -46,12 +52,11 @@
       flex-direction: row;
       align-items: center;
       flex-wrap: wrap;
-      @include adaptive-property(row-gap, 22, 0, 44);
-      @include adaptive-property(column-gap, 40, 0, 80);
+      @include adaptive-property(column-gap, 22, 0, 44);
+      @include adaptive-property(row-gap, 20, 0, 30);
     }
-    &__link span {
+    &__link {
       font-size: 0.875rem;
-      color: #fff;
     }
   }
   @media (min-width: 1025px) {
