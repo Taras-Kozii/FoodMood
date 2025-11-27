@@ -6,17 +6,20 @@
   @include adaptive-property(padding-bottom, 30, 0, 59);
   &__items {
     justify-content: center;
-    row-gap: 2.75rem;
-    @include grid-cards(fill, 200px, 300px, 30px);
+    @include grid-cards(fit, 140px, 220px, 15px);
+    @include on-desktop {
+      @include grid-cards(fill, 140px, 380px, 30px);
+    }
+    @media (min-width: 410px) {
+      justify-content: space-around;
+    }
   }
   &__item {
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    @include on-mobile-l {
-      max-width: 380px;
-    }
   }
   &__img {
     aspect-ratio: 1 / 1;
@@ -24,22 +27,23 @@
     background-color: $bg-color-main;
     @include flex-center;
     @include adaptive-property(width, 70, 0, 115);
-    @include adaptive-property(margin-bottom, 22, 0, 42);
+    @include adaptive-property(margin-bottom, 16, 0, 42);
   }
   &__subtitle {
-    font-size: 1.25rem;
     font-weight: 700;
     line-height: 150%;
     color: #fff;
-    @include adaptive-property(margin-bottom, 18, 0, 22);
+    @include adaptive-property(margin-bottom, 12, 0, 22);
+    @include adaptive-property(font-size, 1, 0, 1.25, rem);
   }
   &__text {
     display: flex;
     flex-direction: column;
     row-gap: 0.625rem;
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 600;
     line-height: 100%;
     color: #fff;
+    @include adaptive-property(font-size, 0.8, 0, 1.0625, rem);
   }
 }

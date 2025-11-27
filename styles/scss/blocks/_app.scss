@@ -17,13 +17,12 @@
   &__text-content {
     flex-basis: 100%;
     @include on-mobile-l {
-      flex-basis: 50%;
+      flex-basis: calc(50% - 30px);
     }
   }
   &__title {
-    font-size: 55px;
     font-weight: 700;
-    line-height: 100%;
+    line-height: 150.909091%; /* 83/55 */
     color: $bg-color-main;
     @include adaptive-property(font-size, 1.8, 0, 3.4375, rem);
     @include adaptive-property(margin-bottom, 20, 0, 32);

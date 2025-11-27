@@ -6,11 +6,14 @@
   }
 }
 .items-brands {
+  justify-content: center;
   @include grid-cards(fill, 140px, 180px, 15px);
   @include on-mobile-l {
     @include grid-cards(fill, 140px, 277px, 30px);
   }
-  justify-content: center;
+  @include on-desktop {
+    justify-content: space-between;
+  }
 
   &__img {
     display: inline-block;

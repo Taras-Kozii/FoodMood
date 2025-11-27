@@ -4,7 +4,7 @@
   background-color: $bg-color-2;
   &__content {
     @include adaptive-property(padding-top, 40, 0, 76);
-    padding-bottom: 40px;
+    padding-bottom: 44px;
   }
   &__header {
     margin-bottom: 24px;
@@ -12,9 +12,14 @@
   &__items {
     display: grid;
     min-width: 0;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 380px));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 300px));
+    justify-content: space-evenly;
     @include adaptive-property(column-gap, 15, 0, 30);
     @include adaptive-property(row-gap, 30, 0, 48);
+    @include on-desktop {
+      justify-content: space-between;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 380px));
+    }
   }
   &__item {
     display: flex;
@@ -24,21 +29,20 @@
   &__img {
     width: 100%;
     aspect-ratio: 380 / 440;
-    margin-bottom: 20px;
     @include ibg;
-    @include adaptive-property(margin-bottom, 1.25, 0, 2.5, rem);
+    @include adaptive-property(margin-bottom, 14, 0, 20);
   }
   &__map-marker {
     width: 21px;
     height: 33px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     object-fit: contain;
     object-position: center;
   }
   &__location {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
-    line-height: 130%;
+    line-height: 150%; /* 30px/20 */
     text-align: center;
     color: $text-color-main;
   }

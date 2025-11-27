@@ -28,12 +28,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 0.625rem;
-
+  row-gap: 5px;
+  
   .section-title {
     font-weight: 600;
     color: $text-color-main;
     line-height: 150.909091%;
+    text-align: center;
     @include adaptive-property(font-size, 1.625, 0, 3.4375, rem);
   }
   .section-subtitle {
