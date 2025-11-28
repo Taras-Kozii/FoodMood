@@ -5,18 +5,29 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 30px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     @include adaptive-property(padding-top, 50, 0, 108);
     @include adaptive-property(padding-bottom, 56, 0, 115);
   }
   &__img {
-    width: 48.75%; /* 585/1200 */
+    width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    align-self: flex-start;
     @include ibg;
+    @media (min-width: 600px) {
+      width: 70%;
+    }
+    @include on-tablet {
+      max-width: 48.75%; /* 585/1200 */
+    }
   }
   &__content-text {
-    width: calc((100% - 48.75%) - 30px);
+    width: 100%;
+    float: left;
+    @include on-tablet {
+      max-width: calc((100% - 48.75%) - 30px);
+    }
   }
   &__header {
     align-items: start;
