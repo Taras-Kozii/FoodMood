@@ -1,6 +1,10 @@
 @use "../utils/_index" as *;
 
 .team {
+  &__content {
+  @include adaptive-property(padding-top, 25, 0, 47);
+  @include adaptive-property(padding-bottom, 25, 0, 65);
+  }
   &__header {
     @include adaptive-property(margin-bottom, 40, 0, 82);
   }
@@ -20,13 +24,14 @@
   &__items {
     display: grid;
     min-width: 0;
-    justify-content: center;
+    justify-content: space-evenly;
     grid-template-columns: repeat(auto-fill, minmax(140px, 277px));
     @include adaptive-property(column-gap, 15, 0, 30);
     @include adaptive-property(row-gap, 30, 0, 48);
+    @include on-tablet {
+      justify-content: space-between;
+    }
   }
-  @include adaptive-property(padding-top, 25, 0, 47);
-  @include adaptive-property(padding-bottom, 25, 0, 65);
 }
 .member {
   display: flex;
