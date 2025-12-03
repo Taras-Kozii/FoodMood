@@ -2,8 +2,8 @@
 
 .team {
   &__content {
-  @include adaptive-property(padding-top, 25, 0, 47);
-  @include adaptive-property(padding-bottom, 25, 0, 65);
+    @include adaptive-property(padding-top, 25, 0, 47);
+    @include adaptive-property(padding-bottom, 25, 0, 65);
   }
   &__header {
     @include adaptive-property(margin-bottom, 40, 0, 82);
@@ -36,6 +36,9 @@
 .member {
   display: flex;
   flex-direction: column;
+  @include hover-pseudo(" img") {
+    scale: 1.08;
+  }
 
   &__img {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -43,12 +46,6 @@
 
     img {
       transition: $transition-duraction;
-    }
-
-    &:hover {
-      img {
-        scale: 1.1;
-      }
     }
   }
 
@@ -67,13 +64,23 @@
   }
 }
 
-.remove-bg-light {
-  background-color: #fff;
-
-
-  img {
-    mix-blend-mode: darken;
-      z-index: -1;
+.member:nth-child(1) {
+  .member__img {
+    background-color: #f5f5f5;
   }
-
+}
+.member:nth-child(2) {
+  .member__img {
+    background-color: #b8bbbf;
+  }
+}
+.member:nth-child(3) {
+  .member__img {
+    background-color: #f4f4f4;
+  }
+}
+.member:nth-child(4) {
+  .member__img {
+    background-color: #f7f7f7;
+  }
 }

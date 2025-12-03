@@ -18,6 +18,10 @@
   &__img {
     display: inline-block;
     aspect-ratio: 277 / 200;
+    transition: scale $transition-duraction;
     @include ibg;
+    @include hover {
+      scale: 1.08;
+    }
   }
 }

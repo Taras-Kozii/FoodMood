@@ -57,6 +57,10 @@
     border-radius: 10px;
     width: 176px;
     height: 55px;
+    transition: scale $transition-duraction;
     @include ibg;
+    @include hover {
+      scale: 1.08;
+    }
   }
 }
