@@ -2,6 +2,7 @@
 
 import { initNavigation } from './menu.js';
 import { initHeader } from './header.js';
+import { VanillaTilt } from './effects/tilt/vanilla-tilt.js';
 import SimpleParallax from './effects/simpleParallax/index.js';
 // import { watcherAnim, watcherToggle, countAnimate } from './animation.js';
 
@@ -12,9 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // watcherAnim('[data-counter]', 0.2, countAnimate, false);
   const images = document.querySelectorAll('.parallax-img');
   new SimpleParallax(images, {
-    delay: 1,
-    orientation: 'down left',
-    scale: 1.3,
+    delay: 0.6,
+    orientation: 'down right',
+    scale: 1.4,
     overflow: false,
-});
+  });
+  VanillaTilt.init(document.querySelectorAll('.categories__img img'), {
+		max: 20,
+		speed: 300,
+    glare: true,
+    'max-glare': 0.5,
+    'glare-prerender': true,
+	});
 });
