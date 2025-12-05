@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.parallax-img');
   new SimpleParallax(images, {
     delay: 0.6,
-    orientation: 'down right',
+    orientation: 'down',
     scale: 1.4,
     overflow: false,
   });

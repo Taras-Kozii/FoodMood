@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="/styles/css/styles.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body class="page right-fix-padding">
     <div class="wrapper">
@@ -443,7 +444,17 @@
                   </div>
                 </div>
               </div>
-              <div class="get__img">
+              <div
+                class="get__img"
+                data-aos="fade-up"
+                data-aos-offset="50"
+                data-aos-delay="50"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center"
+              >
                 <img
                   src="./images/delivery/delivery.webp"
                   alt="car-icon"
@@ -811,5 +822,9 @@
     </div>
 
     <script type="module" src="./scripts/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
