@@ -618,6 +618,14 @@ h6 {
   position: absolute;
   inset: 0;
   z-index: -1;
+  -webkit-mask-image: url("../../images/mask.webp");
+          mask-image: url("../../images/mask.webp");
+  -webkit-mask-position: bottom;
+          mask-position: bottom;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 .hero__img img {
   width: 100%;
@@ -1469,8 +1477,8 @@ h6 {
   border-radius: 10px;
   width: 176px;
   height: 55px;
-  -webkit-transition: scale 0.3s;
-  transition: scale 0.3s;
+  -webkit-transition: padding-top 0.3s;
+  transition: padding-top 0.3s;
   overflow: hidden;
 }
 .app__button img {
@@ -1483,12 +1491,12 @@ h6 {
 }
 @media (hover: hover) and (pointer: fine) {
   .app__button:hover, .app__button:focus-within {
-    scale: 1.08;
+    padding-top: 3px;
   }
 }
 @media (hover: none) and (pointer: coarse) {
   .app__button:active, .app__button:focus, .app__button:focus-within {
-    scale: 1.08;
+    padding-top: 3px;
   }
 }
 
