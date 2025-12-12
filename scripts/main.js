@@ -4,15 +4,11 @@ import { initNavigation } from './menu.js';
 import { initHeader } from './header.js';
 import { VanillaTilt } from './effects/tilt/vanilla-tilt.js';
 import SimpleParallax from './effects/simpleParallax/index.js';
-// import { watcherAnim, watcherToggle, countAnimate } from './animation.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initHeader();
-  // watcherToggle('.hero .scroll-anim', 0.3);
-  // watcherAnim('[data-counter]', 0.2, countAnimate, false);
-  const images = document.querySelectorAll('.parallax-img');
-  new SimpleParallax(images, {
+  new SimpleParallax(document.querySelectorAll('.parallax-img'), {
     delay: 0.6,
     orientation: 'down',
     scale: 1.4,
